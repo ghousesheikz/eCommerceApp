@@ -85,11 +85,6 @@ public class CartAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
                     changeListener.quantityChange(viewHolder0.getAdapterPosition(), String.valueOf(newValue));
             });
 
-            viewHolder0.delete.setOnClickListener(v -> {
-                if (viewHolder0.getAdapterPosition() >= 0 && viewHolder0.getAdapterPosition() < prdtArrayList.size())
-                    changeListener.delete(viewHolder0.getAdapterPosition());
-            });
-
 
 
         }
@@ -134,6 +129,6 @@ public class CartAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     public interface changeListener {
         void quantityChange(int position, String quantity);
-        void delete(int position);
+
     }
 }

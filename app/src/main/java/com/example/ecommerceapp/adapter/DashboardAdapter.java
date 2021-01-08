@@ -267,7 +267,7 @@ public class DashboardAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
                     .transition(DrawableTransitionOptions.withCrossFade(2000)).into(image_1);
             Glide.with(v).load("https://www.advantagetvs.com/Pgm_Prod_Img/RidingWear.jpg")
                     .transition(DrawableTransitionOptions.withCrossFade(2000)).into(image_2);
-            Glide.with(v).load("https://www.advantagetvs.com/Pgm_Prod_Img/P6300460.png")
+            Glide.with(v).load("https://www.advantagetvs.com/Pgm_Prod_Img/RetroFitment.png")
                     .transition(DrawableTransitionOptions.withCrossFade(2000)).into(image_3);
 
 

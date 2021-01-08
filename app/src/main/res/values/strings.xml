@@ -3,4 +3,8 @@
     <string name="product_desc">Whether your products have a specific function, like a camera, or a personal purpose, like fashion, all products exist to enhance or improve the purchaser’s quality of life in one way or another. As the shopper browses, they instinctively imagine having each product in hand, using it and enjoying it.  The more powerful the customer’s fantasy of owning the product, the more likely they are to buy it. Therefore, I like to think of product descriptions as storytelling and psychology, incorporating the elements of both prose writing and journalism. A “good” product description will not do. Competition is getting too fierce. It must be great!</string>
     <string name="title_activity_product_detail">Product Details</string>
     <string name="add_to_cart">ADD TO CART</string>
+    <string name="mobilenumber">Mobile Number</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="signup">SignUp</string>
 </resources>

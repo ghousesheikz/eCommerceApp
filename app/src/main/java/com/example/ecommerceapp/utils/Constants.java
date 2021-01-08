@@ -5,4 +5,8 @@ public interface Constants {
     int RC_SIGN_IN = 123;
     String USER = "user";
     String USERS = "users";
+
+    String MOBILENUMBER = "mobilenumber";
+    String PASSWORD = "password";
+    String ISLOGIN = "islogin";
 }

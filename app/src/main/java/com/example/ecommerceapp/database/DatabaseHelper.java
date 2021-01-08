@@ -23,6 +23,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             + DBUtils.sellingPrice + " INTEGER, " + DBUtils.categoryID + " INTEGER," + DBUtils.imageLink + " TEXT, "
             + DBUtils.noOfItem + " INTEGER, " + DBUtils.totalPrice + " INTEGER); ";
 
+    public static final String USER_TABLE = "CREATE TABLE IF NOT EXISTS " + DBUtils.USER_TABLE +
+            "(" + DBUtils.COLUMN_ID
+            + " INTEGER PRIMARY KEY AUTOINCREMENT, " + DBUtils.MOBILENUMBER + " TEXT, " + DBUtils.PASSWORD + " TEXT, " + DBUtils.ISLOGIN + " TEXT); ";
+
 
     public static synchronized DatabaseHelper getInstance(Context context) {
         if (sInstance == null) {
@@ -39,12 +43,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(PRODUCTS_TABLE);
         db.execSQL(CART_TALE);
+        db.execSQL(USER_TABLE);
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL("DROP TABLE IF EXISTS " + PRODUCTS_TABLE);
         db.execSQL("DROP TABLE IF EXISTS " + CART_TALE);
+        db.execSQL("DROP TABLE IF EXISTS " + USER_TABLE);
         onCreate(db);
     }
 }

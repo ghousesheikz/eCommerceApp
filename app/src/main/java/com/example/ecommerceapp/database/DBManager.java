@@ -6,14 +6,13 @@ import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 
-import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 
 import com.example.ecommerceapp.models.CartPojo;
 import com.example.ecommerceapp.models.LstProduct;
+import com.example.ecommerceapp.models.User;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class DBManager {
     private SQLiteDatabase mDatabase;
@@ -33,7 +32,27 @@ public class DBManager {
         mDatabase.close();
     }
 
+
+    public long insertUserData(User user) {
+        long count = 0;
+        try {
+            ContentValues contentValue = new ContentValues();
+            contentValue.put(DBUtils.MOBILENUMBER, user.getmMobileNumber());
+            contentValue.put(DBUtils.PASSWORD, user.getmPassword());
+            contentValue.put(DBUtils.ISLOGIN, user.getmIsLogin());
+            count = mDatabase.insert(DBUtils.USER_TABLE, null, contentValue);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return count;
+    }
+
+    public void deleteproductData(){
+        mDatabase.execSQL("delete from "+DBUtils.PRODUCT_TABLE);
+    }
+
     public long insertProductData(LstProduct product) {
+
         long count = 0;
         try {
             ContentValues contentValue = new ContentValues();
@@ -95,7 +114,7 @@ public class DBManager {
         }
         cursor.close();
         ProductList.setValue(mDataList);
-        return  mDataList;
+        return mDataList;
     }
 
     public ArrayList<CartPojo> getCartData() {
@@ -124,5 +143,28 @@ public class DBManager {
         }
         cursor.close();
         return CartList;
+    }
+
+    public User validateUser(String mobilenumber, String password) {
+
+        User data = null;
+        mDatabase = mSQLHelper.getReadableDatabase();
+
+        String selectQuery = "SELECT * FROM "
+                + DBUtils.USER_TABLE + " WHERE " + DBUtils.MOBILENUMBER + "='" + mobilenumber + "' AND " + DBUtils.PASSWORD + "='" + password + "'";
+
+        Cursor cursor = mDatabase.rawQuery(selectQuery, null);
+
+        if (cursor.moveToFirst()) {
+            do {
+                data = new User();
+                data.setmMobileNumber(cursor.getString(cursor.getColumnIndex(DBUtils.MOBILENUMBER)));
+                data.setmPassword(cursor.getString(cursor.getColumnIndex(DBUtils.PASSWORD)));
+                data.setmIsLogin(cursor.getString(cursor.getColumnIndex(DBUtils.ISLOGIN)));
+
+            } while (cursor.moveToNext());
+        }
+        cursor.close();
+        return data;
     }
 }

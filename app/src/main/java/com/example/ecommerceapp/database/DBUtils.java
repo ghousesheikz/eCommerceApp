@@ -18,5 +18,9 @@ public class DBUtils {
 
 
     public static final String CART_TABLE = "cart_table";
+    public static final String USER_TABLE = "user_table";
+    public static final String MOBILENUMBER = "mobile_number";
+    public static final String PASSWORD = "password";
+    public static final String ISLOGIN = "is_login";
 
 }
