@@ -70,14 +70,14 @@ public class MainActivity extends BaseActivity implements DashboardOnClick {
     private void insertData() {
         dbManager.deleteproductData();
         dbManager.insertProductData(new LstProduct("1", "HELMET", 900, 1, 950, 1, "https://www.advantagetvs.com/Pgm_Prod_Img/Apache.png"));
-        dbManager.insertProductData(new LstProduct("2", "CLEANER", 250, 1, 300, 1, "https://www.advantagetvs.com/Pgm_Prod_Img/P6300460.png"));
+        dbManager.insertProductData(new LstProduct("2", "BEEPER", 90, 1, 120, 1, "https://www.advantagetvs.com/Pgm_Prod_Img/N3163660.png"));
         dbManager.insertProductData(new LstProduct("3", "CLEANERPRO", 350, 1, 400, 1, "https://www.advantagetvs.com/Pgm_Prod_Img/P6300460.png"));
         dbManager.insertProductData(new LstProduct("1", "HELMET", 900, 1, 950, 1, "https://www.advantagetvs.com/Pgm_Prod_Img/Apache.png"));
-        dbManager.insertProductData(new LstProduct("2", "CLEANER", 250, 1, 300, 1, "https://www.advantagetvs.com/Pgm_Prod_Img/P6300460.png"));
+        dbManager.insertProductData(new LstProduct("2", "BEEPER KIT", 35, 1, 64, 1, "https://www.advantagetvs.com/Pgm_Prod_Img/ND320310.png"));
         dbManager.insertProductData(new LstProduct("3", "CLEANERPRO", 350, 1, 400, 1, "https://www.advantagetvs.com/Pgm_Prod_Img/P6300460.png"));
         dbManager.insertProductData(new LstProduct("1", "HELMET", 900, 1, 950, 1, "https://www.advantagetvs.com/Pgm_Prod_Img/Apache.png"));
-        dbManager.insertProductData(new LstProduct("2", "CLEANER", 250, 1, 300, 1, "https://www.advantagetvs.com/Pgm_Prod_Img/P6300460.png"));
-        dbManager.insertProductData(new LstProduct("3", "CLEANERPRO", 350, 1, 400, 1, "https://www.advantagetvs.com/Pgm_Prod_Img/P6300460.png"));
+        dbManager.insertProductData(new LstProduct("2", "CLEANER", 250, 1, 300, 1, "https://www.advantagetvs.com/Pgm_Prod_Img/P6300450.png"));
+        dbManager.insertProductData(new LstProduct("3", "KIT ENGINE GUARD", 222, 1, 300, 1, "https://www.advantagetvs.com/Pgm_Prod_Img/NA320420.png"));
 
     }
 
